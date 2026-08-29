@@ -4,7 +4,7 @@ param(
     [string]$Prompt = "Reply with the single word OK.",
 
     [Parameter(Mandatory = $false)]
-    [string]$Endpoint = $(if ($env:LLM_ENDPOINT) { $env:LLM_ENDPOINT } else { "http://172.22.1.59:11434" }),
+    [string]$Endpoint = $(if ($env:LLM_ENDPOINT) { $env:LLM_ENDPOINT } else { "http://127.0.0.1:11434" }),
 
     [Parameter(Mandatory = $false)]
     [string]$Model = $(if ($env:LLM_MODEL) { $env:LLM_MODEL } else { "llama3.2:1b" }),
