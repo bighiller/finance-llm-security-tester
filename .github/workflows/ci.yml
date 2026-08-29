@@ -1,0 +1,40 @@
+name: Artifact B — caller and secret checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Parse Invoke-LocalLlm.ps1
+        shell: pwsh
+        run: |
+          $errors = $null
+          $null = [System.Management.Automation.Language.Parser]::ParseFile(
+            "Invoke-LocalLlm.ps1",
+            [ref]$null,
+            [ref]$errors
+          )
+          if ($errors) {
+            $errors | ForEach-Object { Write-Output $_ }
+            exit 1
+          }
+          Write-Output "Parse OK"
+
+      - name: Fail if logs or secrets are tracked
+        run: |
+          set -e
+          if git ls-files | grep -E '(^logs/|\.jsonl$|\.env$|local\.config)'; then
+            echo "Tracked log or config file"
+            exit 1
+          fi
+          if git grep -nE '172\.22\.|sk-[A-Za-z0-9]{10,}|ghp_[A-Za-z0-9]{20,}' -- ':!.github'; then
+            echo "Lab IP or token pattern in tracked files"
+            exit 1
+          fi
+          echo "Secret check OK"
