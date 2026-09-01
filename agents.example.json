@@ -1,0 +1,20 @@
+{
+  "agents": [
+    {
+      "agentId": "agent-endpoint-reader-001",
+      "displayName": "Endpoint inventory reader",
+      "scopes": ["llm.prompt", "endpoint.read"],
+      "status": "active",
+      "issuedAt": "2026-08-31T00:00:00Z",
+      "expiresAt": "2026-12-31T00:00:00Z"
+    },
+    {
+      "agentId": "agent-revoked-001",
+      "displayName": "Revoked test agent",
+      "scopes": ["llm.prompt"],
+      "status": "revoked",
+      "issuedAt": "2026-01-01T00:00:00Z",
+      "expiresAt": "2026-12-31T00:00:00Z"
+    }
+  ]
+}
