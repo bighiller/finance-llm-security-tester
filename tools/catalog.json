@@ -1,0 +1,10 @@
+{
+  "tools": [
+    {
+      "toolId": "endpoint-inventory",
+      "path": "tools/Get-EndpointInventory.ps1",
+      "sha256": "ED00F5C713CA6017E928965E04364796DF31C23C145CD0C12959FAC27DF01A87",
+      "allowedScopes": ["endpoint.read"]
+    }
+  ]
+}

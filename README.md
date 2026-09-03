@@ -12,7 +12,7 @@ This is not a generic OWASP LLM Top 10 demo pack.
 | --- | --- |
 | Local LLM caller (policy wrap, timeout, usage log) | Present |
 | Agent identity and authorization | Present |
-| Prompt / agent supply-chain (MCP, signing, injection resistance) | Not started |
+| Prompt / agent supply-chain (MCP, signing, injection resistance) | Present |
 | Token metering and integrity | Not started |
 | RAG / data-exfiltration defenses | Not started |
 

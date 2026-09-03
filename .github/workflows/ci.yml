@@ -38,3 +38,16 @@ jobs:
             exit 1
           fi
           echo "Secret check OK"
+          
+      - name: Verify tool catalog hashes
+        shell: pwsh
+        run: |
+          $catalog = Get-Content -Raw tools/catalog.json | ConvertFrom-Json
+          foreach ($t in $catalog.tools) {
+            $actual = (Get-FileHash -Algorithm SHA256 $t.path).Hash
+            if ($actual -ne $t.sha256) {
+              Write-Output "HASH MISMATCH $($t.toolId)"
+              exit 1
+            }
+          }
+          Write-Output "Catalog hashes OK"
