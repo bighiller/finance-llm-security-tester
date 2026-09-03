@@ -27,6 +27,7 @@ jobs:
           Write-Output "Parse OK"
 
       - name: Fail if logs or secrets are tracked
+        shell: bash
         run: |
           set -e
           if git ls-files | grep -E '(^logs/|\.jsonl$|\.env$|local\.config)'; then
