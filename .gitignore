@@ -210,3 +210,4 @@ logs/
 *.jsonl
 .env
 local.config.*
+quotas.json

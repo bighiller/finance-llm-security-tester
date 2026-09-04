@@ -1,0 +1,13 @@
+{
+  "windowMinutes": 60,
+  "default": {
+    "maxCalls": 10,
+    "maxPromptChars": 4000
+  },
+  "agents": {
+    "agent-endpoint-reader-001": {
+      "maxCalls": 3,
+      "maxPromptChars": 500
+    }
+  }
+}
