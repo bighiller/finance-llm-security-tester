@@ -1,0 +1,15 @@
+{
+  "canary": "CANARY-FIN-7741",
+  "documents": [
+    {
+      "docId": "pub-policy-001",
+      "acl": ["public"],
+      "text": "Password resets go through the service desk."
+    },
+    {
+      "docId": "fin-secret-001",
+      "acl": ["finance.secret"],
+      "text": "Internal wire cutoff is 16:00 ET. CANARY-FIN-7741"
+    }
+  ]
+}

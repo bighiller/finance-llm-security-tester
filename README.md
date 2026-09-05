@@ -14,7 +14,7 @@ This is not a generic OWASP LLM Top 10 demo pack.
 | Agent identity and authorization | Present |
 | Prompt / agent supply-chain (MCP, signing, injection resistance) | Present |
 | Token metering and integrity | Present |
-| RAG / data-exfiltration defenses | Not started |
+| RAG / data-exfiltration defenses | Present |
 
 ## Run the caller
 
