@@ -1,3 +1,4 @@
+[![CI](https://github.com/bighiller/finance-llm-security-tester/actions/workflows/ci.yml/badge.svg)](https://github.com/bighiller/finance-llm-security-tester/actions)
 # finance-llm-security-tester
 
 Public controls for securing an agentic intelligence pipeline.
