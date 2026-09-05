@@ -8,19 +8,17 @@ This is not a generic OWASP LLM Top 10 demo pack.
 
 ## Controls
 
-| Control | Status |
-| --- | --- |
-| Local LLM caller (policy wrap, timeout, usage log) | Present |
-| Agent identity and authorization | Present |
-| Prompt / agent supply-chain (MCP, signing, injection resistance) | Present |
-| Token metering and integrity | Present |
-| RAG / data-exfiltration defenses | Present |
+| Control | Status | Entry point |
+| --- | --- | --- |
+| Local LLM caller (policy wrap, timeout, usage log) | Present | `Invoke-LocalLlm.ps1` |
+| Agent identity and authorization | Present | `Invoke-AgentGate.ps1` |
+| Prompt / agent supply-chain (tool hash allow-list) | Present | `Invoke-ToolGate.ps1` |
+| Token metering and integrity | Present | `Invoke-UsageGate.ps1` |
+| RAG / data-exfiltration defenses | Present | `Invoke-RagGate.ps1` |
 
-## Run the caller
+## Demo
 
-Windows PowerShell, repo root, local Ollama reachable on the LAN:
+Windows PowerShell, repo root. Does not need a live model.
 
 ```powershell
-$env:LLM_ENDPOINT = "http://127.0.0.1:11434"
-$env:LLM_MODEL = "llama3.2:1b"
-.\Invoke-LocalLlm.ps1
+.\Invoke-PipelineDemo.ps1
