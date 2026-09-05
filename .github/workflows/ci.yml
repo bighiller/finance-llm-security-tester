@@ -52,3 +52,6 @@ jobs:
             }
           }
           Write-Output "Catalog hashes OK"
+      - name: Run pipeline demo
+        shell: pwsh
+        run: .\Invoke-PipelineDemo.ps1
